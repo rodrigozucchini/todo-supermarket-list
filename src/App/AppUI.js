@@ -8,7 +8,6 @@ import { CreateTodoButton } from '../CreateTodoButton';
 import { Modal } from '../Modal';
 import { TodoForm } from '../TodoForm';
 
-
 function AppUI() {
   const {
     searchedTodos,
@@ -17,24 +16,23 @@ function AppUI() {
     openModal,
     setOpenModal,
   } = React.useContext(TodoContext);
-  
+
   return (
+
     <React.Fragment>
       <TodoCounter />
       <TodoSearch />
-
       <TodoList>
-        {searchedTodos.map(todo => (
+        {searchedTodos.map((todo, index) => (
           <TodoItem
-            key={todo.text}
+            key={index}
             text={todo.text}
             completed={todo.completed}
-            onComplete={() => completeTodo(todo.text)}
-            onDelete={() => deleteTodo(todo.text)}
+            onComplete={() => completeTodo(index)}
+            onDelete={() => deleteTodo(index)}
           />
         ))}
       </TodoList>
-
       {!!openModal && (
         <Modal>
           <TodoForm />

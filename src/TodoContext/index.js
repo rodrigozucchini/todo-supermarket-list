@@ -18,6 +18,7 @@ function TodoProvider(props) {
 
   let searchedTodos = [];
 
+
   if (!searchValue.length >= 1) {
     searchedTodos = todos;
   } else {
@@ -28,17 +29,15 @@ function TodoProvider(props) {
     });
   }
 
-  const completeTodo = (text) => {
-    const todoIndex = todos.findIndex(todo => todo.text === text);
+  const completeTodo = (index) => {
     const newTodos = [...todos];
-    newTodos[todoIndex].completed = true;
+    newTodos[index].completed = !newTodos[index].completed
     saveTodos(newTodos);
   };
 
-  const deleteTodo = (text) => {
-    const todoIndex = todos.findIndex(todo => todo.text === text);
+  const deleteTodo = (index) => {
     const newTodos = [...todos];
-    newTodos.splice(todoIndex, 1);
+    newTodos.splice(index, 1);
     saveTodos(newTodos);
   };
   

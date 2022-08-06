@@ -9,7 +9,7 @@
 }
 
 .TodoItem-skeleton {
-  background-color: #ececec;
+  background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(209,204,204,0.76234243697479) 100%);
   position: relative;
   display: flex;
   justify-content: center;
