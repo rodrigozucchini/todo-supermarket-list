@@ -22,3 +22,10 @@
 .TodoSearch:focus {
   outline-color: #61DAFA;
 }
+
+@media screen and (max-width: 410px) {
+  .TodoSearch::placeholder {
+    font-size: 16px;
+    font-weight: 400;
+  }
+}

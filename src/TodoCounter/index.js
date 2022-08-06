@@ -6,7 +6,7 @@ function TodoCounter({name, setName}) {
   const { totalTodos, completedTodos } = React.useContext(TodoContext);
   
   return (
-    <h2 className="TodoCounter">🛒 Hola {name} has encontrado {completedTodos} de {totalTodos} {totalTodos === 1 ? "producto en el Supermercado🛒": "productos en el Supermercado🛒"}</h2>
+    <h2 className="TodoCounter">🛒 Has encontrado {completedTodos} de {totalTodos} {totalTodos === 1 ? "producto en el Supermercado🛒": "productos en el Supermercado🛒"}</h2>
   );
 }
 
